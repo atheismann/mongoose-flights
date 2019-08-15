@@ -1,0 +1,19 @@
+{
+  "name": "mongoose-flights",
+  "version": "1.0.0",
+  "description": "Mongoose Flights Lab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atheismann/mongoose-flights.git"
+  },
+  "author": "Andrew Theismann <andrew@theismannconsulting.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atheismann/mongoose-flights/issues"
+  },
+  "homepage": "https://github.com/atheismann/mongoose-flights#readme"
+}
