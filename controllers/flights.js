@@ -1,4 +1,5 @@
 const Flight = require('../models/flight');
+const Ticket = require('../models/ticket');
 const oneYear = 365 * 24 * 60 * 60 * 1000;
 const oneYearLater = () => { return new Date(Date.now() + oneYear) };
 
@@ -17,7 +18,9 @@ function index(req, res) {
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        res.render('flights/show', { title: 'Flight Detail', flight });
+        Ticket.find({ flight: flight._id }, function(err, tickets) {
+            res.render('flights/show', { title: 'Flight Detail', flight, tickets });
+        });
     });
 }
 

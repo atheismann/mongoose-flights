@@ -7,7 +7,30 @@
   <div><%= flight.flightNo %></div>
   <div>Departure Date: </div>
   <div><%= flight.departs %></div>
-</section>
+  </section>
+  <br><br><h3>Tickets:</h3>
+  <% if (tickets.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickets.forEach(function(t) { %>
+        <tr>
+          <td><%= t.seat %></td>
+          <td><%= t.price %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Tickets Yet</h5>
+<% } %>
+<a href="/flights/<%= flight._id %>/tickets/new" id=newTicket><button>New Ticket</button></a>
+
 
 <br><br><h2>Destinations</h2>
 <form id="add-destination-form" method="POST"
