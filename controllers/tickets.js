@@ -7,6 +7,7 @@ module.exports = {
 };
 
 function create(req, res) {
+    console.log(req);
     Ticket.create(req.body, function(err, ticket) {
         if (err) return res.render('<add ticket form>')
         console.log('ticket data', ticket);
