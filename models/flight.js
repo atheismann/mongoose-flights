@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const oneYear = 365 * 24 * 60 * 60 * 1000;
+const oneYearLater = () => { return new Date(Date.now() + oneYear) };
 
 const flightSchema = new Schema({
     airline: String,
@@ -10,7 +12,7 @@ const flightSchema = new Schema({
     },
     departs: {
         type: Date,
-        default: () => { return new Date().now().getFullYear(+1) },
+        default: oneYearLater,
     }
 }, {
     timestamps: true
