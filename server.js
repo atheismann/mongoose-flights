@@ -7,6 +7,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights');
+const destinationsRouter = require('./routes/destinations')
 
 
 require('./config/mongoose');
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
+app.use('/', destinationsRouter)
 
 
 app.listen(port, () => console.log(`Express is listening on part ${port}`));
