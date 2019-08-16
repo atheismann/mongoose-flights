@@ -3,9 +3,11 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+const logger = require('morgan');
+
 const indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights');
-const logger = require('morgan');
+
 
 require('./config/mongoose');
 
