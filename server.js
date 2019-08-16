@@ -12,4 +12,3 @@ app.use('/flights', flightsRouter);
 
 
 app.listen(port, () => console.log(`Express is listening on part ${port}`));
-
