@@ -8,15 +8,17 @@ module.exports = {
 
 function create(req, res) {
     Ticket.create(req.body, function(err, ticket) {
-        res.redirect('/flights/show');
+        if (err) return res.render('<add ticket form>')
+        console.log('ticket data', ticket);
+        res.redirect(`/flights/${req.params.id}`);
     });
 }
 
 function newTicket(req, res) {
-    Ticket.find({}, function(err, tickets) {
+    Flight.find({}, function(err, flight) {
         res.render('tickets/new', {
             title: 'New Ticket',
-            tickets,
+            flight,
         });
     })
 }
