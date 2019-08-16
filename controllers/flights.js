@@ -1,4 +1,6 @@
 const Flight = require('../models/flight');
+const oneYear = 365 * 24 * 60 * 60 * 1000;
+const oneYearLater = () => { return new Date(Date.now() + oneYear) };
 
 module.exports = {
     index,
@@ -20,7 +22,7 @@ function show(req, res) {
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', { title: 'Add Flight' });
+    res.render('flights/new', { title: 'Add Flight', oneYearLater });
 }
 
 function create(req, res) {
